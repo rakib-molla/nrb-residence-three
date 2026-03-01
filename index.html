@@ -137,25 +137,47 @@
                     </div>
                 </div>
             </div> -->
-            <div class="bg- py-10 flex justify-center px-4">
-                <div class="flex flex-col sm:flex-row w-full max-w-md border border-gray-500 overflow-hidden">
-                    <div class="relative flex-1 bg-black/40">
-                        <select
-                            class="search-select w-full bg-transparent text-white font-bold py-4 px-6 outline-none cursor-pointer text-lg tracking-wide">
-                            <option class="bg-black">2 BHK</option>
-                            <option class="bg-black">2 BHK</option>
-                            <option class="bg-black">2 BHK</option>
-                        </select>
-                    </div>
-                    <button
-                        class="bg-maincolor hover:bg-maincolor/80 text-white flex items-center justify-center gap-3 py-4 px-10 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            <div class="absolute inline-block text-left font-sans lg:bottom-10 lg:left-20">
+                <div class="flex items-stretch shadow-lg">
+                    <button id="dropdownBtn"
+                        class="bg-maincolor text-white px-6 py-4 flex items-center justify-between min-w-[200px] hover:bg-black transition-all">
+                        <span id="selectedDisplay" class="font-bold uppercase tracking-wider text-sm">Bedrooms</span>
+                        <svg id="arrowIcon" class="w-4 h-4 ml-2 transition-transform duration-200" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
-                        <span class="font-bold tracking-[0.2em] text-lg">SEARCH</span>
                     </button>
+            
+                    <button class="bg-[#4a90e2] text-white px-8 py-4 flex items-center gap-2 hover:bg-[#357abd] transition-all">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <span class="font-bold uppercase tracking-widest text-sm">Search</span>
+                    </button>
+                </div>
+            
+                <div id="dropdownMenu" class="hidden absolute left-0 mt-0 w-full bg-white shadow-xl z-10 p-2 border-t-0">
+                    <div class="flex items-center justify-start flex-wrap gap-1 p-2">
+            
+                        <button onclick="selectSingle(this, 'ANY')"
+                            class="type-btn active-blue px-4 py-2 font-bold text-xs uppercase tracking-tighter">Any</button>
+                        <button onclick="selectSingle(this, 'STUDIO')"
+                            class="type-btn px-4 py-2 font-bold text-xs uppercase tracking-tighter hover:bg-gray-100">Studio</button>
+            
+                        <div class="flex gap-1 ml-2">
+                            <button onclick="toggleNumber(this, '1')"
+                                class="num-btn px-3 py-2 font-bold text-xs hover:bg-gray-100">1</button>
+                            <button onclick="toggleNumber(this, '2')"
+                                class="num-btn px-3 py-2 font-bold text-xs hover:bg-gray-100">2</button>
+                            <button onclick="toggleNumber(this, '3')"
+                                class="num-btn px-3 py-2 font-bold text-xs hover:bg-gray-100">3</button>
+                            <button onclick="toggleNumber(this, '4')"
+                                class="num-btn px-3 py-2 font-bold text-xs hover:bg-gray-100">4</button>
+                            <button onclick="toggleNumber(this, '5')"
+                                class="num-btn px-3 py-2 font-bold text-xs hover:bg-gray-100">5</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -571,6 +593,65 @@
         });
     </script>
     <!-- navbar js end -->
+
+    <!-- clickable search filter js start   -->
+     <script>
+        const dropdownBtn = document.getElementById('dropdownBtn');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const arrowIcon = document.getElementById('arrowIcon');
+        const display = document.getElementById('selectedDisplay');
+
+        let selectedType = 'ANY';
+        let selectedNumbers = [];
+
+        // Toggle dropdown open/close
+        dropdownBtn.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('hidden');
+            arrowIcon.classList.toggle('rotate-180');
+        });
+
+        // Any ba Studio select korar logic
+        function selectSingle(element, type) {
+            selectedType = type;
+            // Remove active class from other buttons
+            document.querySelectorAll('.type-btn').forEach(btn => btn.classList.remove('active-blue'));
+            element.classList.add('active-blue');
+            updateUI();
+        }
+
+        // Numbers selection logic (Multi-select)
+        function toggleNumber(element, num) {
+            if (selectedNumbers.includes(num)) {
+                selectedNumbers = selectedNumbers.filter(n => n !== num);
+                element.classList.remove('selected-num');
+            } else {
+                selectedNumbers.push(num);
+                element.classList.add('selected-num');
+            }
+            updateUI();
+        }
+
+        // Display update logic
+        function updateUI() {
+            let text = selectedType;
+            if (selectedNumbers.length > 0) {
+                // Soting numbers and joining with comma
+                text = `${selectedType}: ${selectedNumbers.sort().join(', ')}`;
+            }
+            display.innerText = text;
+        }
+
+        // Close dropdown when clicking outside
+        window.onclick = function (event) {
+            if (!event.target.closest('#dropdownBtn') && !event.target.closest('#dropdownMenu')) {
+                dropdownMenu.classList.add('hidden');
+                arrowIcon.classList.remove('rotate-180');
+            }
+        }
+    </script>
+    <!-- clickable search filter js end  -->
+
+
 </body>
 
 </html>
