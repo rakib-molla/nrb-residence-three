@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>NRB Residence</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+                    colors: {
+                        maincolor: '#246186',
+
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Raleway';
+        }
+
+        /* This ensures the video covers the area without black bars */
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw;
+            min-height: 100vh;
+            min-width: 177.77vh;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- header start  -->
+    <header class="relative h-screen w-full overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="video-background h-full w-full">
+                <div class="video-foreground">
+
+                    <!-- <iframe class="video-background" width="560" height="315" src="https://www.youtube.com/embed/lWeoPhnQxMc?autoplay=1&mute=1"
+                            title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                        </iframe> -->
+
+                    <iframe class="video-background" width="560" height="315"
+                        src="https://www.youtube.com/embed/dVAVFOU7dGk?autoplay=1&mute=1&controls=0&loop=1&playlist=dVAVFOU7dGk"
+                        title="YouTube video player" frameborder="0"
+                        allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+        <nav class="relative z-50 w-full text-white font-bold uppercase tracking-widest text-[11px] sm:text-xs">
+            <div class="max-w-7xl mx-auto px-4 h-24 flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <!-- <span class="text-2xl tracking-tighter font-normal">Nrb Residence</span> -->
+                    <img src="https://i.ibb.co.com/VYwysF2j/NRB-Logo-white.png" class="h-10 w-20" alt="nrb residence">
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#" class="hover:text-blue-300 transition-colors">Find Your Home</a>
+                    <a href="https://rakib-molla.github.io/nrb-residence/projects.html"
+                        class="hover:text-blue-300 transition-colors">Projects</a>
+                    <a href="#"
+                        class="px-8 py-4 border-2 border-white bg-transparent hover:bg-white hover:text-maincolor transition-all duration-300">
+                        Book Apartment
+                    </a>
+                    <a href="https://rakib-molla.github.io/nrb-residence/aboutus.html"
+                        class="hover:text-blue-300 transition-colors">About Us</a>
+                    <a href="https://rakib-molla.github.io/nrb-residence/contact.html"
+                        class="hover:text-blue-300 transition-colors">Contact Us</a>
+                </div>
+
+                <div class="flex items-center space-x-6">
+                    <a href="tel:+8802222275895" class="hidden xl:block hover:text-blue-300">+8802222275895</a>
+                    <button id="menu-btn" class="lg:hidden p-2 focus:outline-none">
+                        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu"
+                class="hidden lg:hidden absolute top-24 left-0 w-full bg-maincolor/95 backdrop-blur-lg flex flex-col items-center py-10 space-y-6 shadow-2xl border-t border-white/10">
+                <a href="#" class="text-base">Find Your Home</a>
+                <a href="#" class="text-base">Projects</a>
+                <a href="#" class="text-base">About Us</a>
+                <a href="#" class="text-base">Contact Us</a>
+                <a href="#" class="w-2/3 text-center py-4 border-2 border-white">Book Apartment</a>
+            </div>
+        </nav>
+
+        <div class="relative z-20 flex flex-col items-center justify-center h-[calc(600px-96px)] w-full px-4l">
+            <!-- <div class="w-50 md:w-full md:max-w-3xl mr-20">
+                <div
+                    class="relative left-10 flex items-center w-full h-14 md:h-16 bg-white rounded-full shadow-2xl px-5 md:px-7 group border border-transparent focus-within:border-blue-400 transition-all">
+                    <input type="text" placeholder="2BHK  minimum of 1200 sq ft"
+                        class="w-full bg-transparent outline-none text-gray-800 text-sm md:text-base placeholder-gray-400 pr-20" />
+                    <div class="absolute right-5 md:right-7 flex items-center space-x-4">
+                        <button class="text-green-500 hover:scale-110 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-7 md:w-7" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+            <div class="absolute inline-block text-left font-sans lg:bottom-10 lg:left-20">
+                <div class="flex items-stretch shadow-lg">
+                    <button id="dropdownBtn"
+                        class="bg-maincolor text-white px-6 py-4 flex items-center justify-between min-w-[200px] hover:bg-black transition-all">
+                        <span id="selectedDisplay" class="font-bold uppercase tracking-wider text-sm">Bedrooms</span>
+                        <svg id="arrowIcon" class="w-4 h-4 ml-2 transition-transform duration-200" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <button
+                        class="bg-[#4a90e2] text-white px-8 py-4 flex items-center gap-2 hover:bg-[#357abd] transition-all">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <span class="font-bold uppercase tracking-widest text-sm">Search</span>
+                    </button>
+                </div>
+
+                <div id="dropdownMenu"
+                    class="hidden absolute left-0 mt-0 w-full bg-white shadow-xl z-10 p-2 border-t-0">
+                    <div class="flex items-center justify-start flex-wrap gap-1 p-2">
+
+                        <button onclick="selectSingle(this, 'ANY')"
+                            class="type-btn active-blue px-4 py-2 font-bold text-xs uppercase tracking-tighter">Any</button>
+                        <button onclick="selectSingle(this, 'STUDIO')"
+                            class="type-btn px-4 py-2 font-bold text-xs uppercase tracking-tighter hover:bg-gray-100">Studio</button>
+
+                        <div class="flex gap-1 ml-2">
+                            <button onclick="toggleNumber(this, '1')"
+                                class="num-btn px-3 py-2 font-bold text-xs hover:bg-gray-100">1</button>
+                            <button onclick="toggleNumber(this, '2')"
+                                class="num-btn px-3 py-2 font-bold text-xs hover:bg-gray-100">2</button>
+                            <button onclick="toggleNumber(this, '3')"
+                                class="num-btn px-3 py-2 font-bold text-xs hover:bg-gray-100">3</button>
+                            <button onclick="toggleNumber(this, '4')"
+                                class="num-btn px-3 py-2 font-bold text-xs hover:bg-gray-100">4</button>
+                            <button onclick="toggleNumber(this, '5')"
+                                class="num-btn px-3 py-2 font-bold text-xs hover:bg-gray-100">5</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end  -->
+
+    <!-- footer section  -->
+    <footer class="bg-gray-200 text-black pt-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
+
+                <div class="space-y-6">
+
+                    <h4 class="text-xl font-bold tracking-tight text-gold">Office Location</h4>
+                    <div class="space-y-4 text-sm text-black">
+                        <p class="leading-relaxed flex gap-3">
+                            <i class="fas fa-location-dot  mt-1"></i>
+                            <span class="">Level-12, Ahmed Tower, 28 & 30, Kemal Ataturk
+                                Avenue, Banani, Dhaka-1213</span>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <i class="fas fa-phone "></i>
+                            <span class="">+8802222275895</span>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <i class="fas fa-envelope "></i>
+                            <span class="">info@nrbresidence.com</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-8 relative text-gold">
+                        Navigation
+                        <span class="absolute bottom-[-10px] left-0 w-10 h-1 bg-gold rounded-full"></span>
+                    </h4>
+                    <ul class="grid grid-cols-2 gap-y-4 gap-x-2 text-sm">
+                        <li><a href="#" class="footer-link"></i> Home</a>
+                        </li>
+                        <li><a href="#" class="footer-link"></i>
+                                Brochure</a></li>
+                        <li><a href="#" class="footer-link"></i> About
+                                Us</a></li>
+                        <li><a href="#" class="footer-link"></i> How to
+                                Buy</a></li>
+                        <li><a href="#" class="footer-link"></i> Why NRB</a>
+                        </li>
+                        <li><a href="#" class="footer-link"></i> FAQ's</a>
+                        </li>
+                        <li><a href="#" class="footer-link"></i>
+                                Projects</a></li>
+                        <li><a href="#" class="footer-link"></i> Contact
+                                Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-8 relative text-gold">
+                        Our Offices
+                        <span class="absolute bottom-[-10px] left-0 w-10 h-1 bg-gold rounded-full"></span>
+                    </h4>
+                    <div class="space-y-6">
+                        <div class="office-card group">
+                            <div class="flex items-center gap-3 mb-1">
+                                <i class="fas fa-building text-primary"></i>
+                                <span class="font-semibold ">Corporate Office</span>
+                            </div>
+                            <p class="text-xs  pl-7">Kemal Ataturk Avenue, Banani, Dhaka-1213.</p>
+                        </div>
+                        <div class="office-card group">
+                            <div class="flex items-center gap-3 mb-1">
+                                <i class="fas fa-house-chimney text-primary"></i>
+                                <span class="font-semibold ">Branch Office</span>
+                            </div>
+                            <p class="text-xs  pl-7">Block-E, Banani, Dhaka-1213.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-xs ">
+                    2026 &copy; <span class="">NRB Residence</span>. All Rights Reserved | Developed
+                    by <a href="#" class="text-sky-500 font-bold hover:underline">Techsolutions</a>
+                </p>
+
+                <div class="flex items-center gap-3">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-maincolor flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
+                        <i class="fab fa-facebook-f text-white text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-maincolor flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
+                        <i class="fab fa-linkedin-in text-white text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-maincolor text-white flex items-center justify-center text-slate-400   transition-all transform hover:-translate-y-1">
+                        <i class="fab fa-youtube  text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <!-- navbar js start  -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+            } else {
+                menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+            }
+        });
+    </script>
+    <!-- navbar js end -->
+
+    
+</body>
+
+</html>
