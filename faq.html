@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>NRB Residence | About</title>
+    <title>NRB Residence | Faq</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,18 @@
 
                     colors: {
                         maincolor: '#246186',
-
+                        gold: '#C5A059',
+                        dark: '#1a1a1a',
+                        denim: '#181D24',
+                    },
+                    animation: {
+                        'text-up': 'textUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        textUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
                     }
                 }
             }
@@ -67,8 +78,8 @@
                 <div class="video-foreground">
     
                     <!-- <iframe class="video-background" width="560" height="315" src="https://www.youtube.com/embed/lWeoPhnQxMc?autoplay=1&mute=1"
-                                title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-                            </iframe> -->
+                                    title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                                </iframe> -->
     
                     <iframe class="video-background" width="560" height="315"
                         src="https://www.youtube.com/embed/dVAVFOU7dGk?autoplay=1&mute=1&controls=0&loop=1&playlist=dVAVFOU7dGk"
@@ -124,130 +135,94 @@
             </div>
         </nav>
     
-        
+    
     </header>
     <!-- header end  -->
 
+
     <!-- bg section  -->
-    <!-- <section class="bg-denim py-28 text-center relative overflow-hidden">
+    <section class="bg-denim py-28 text-center relative overflow-hidden">
         <div class="absolute inset-0 opacity-60">
             <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80&w=2000"
                 alt="pattern">
         </div>
         <div class="relative z-10 px-6 mb-4">
-        </div>
-    </section> -->
-
-
-    <!-- about section  -->
-    <section class="w-full bg-white overflow-hidden">
-        <div class="mx-auto grid w-full grid-cols-1 md:grid-cols-2">
-    
-            <!-- Left Content -->
-            <div class="flex flex-col justify-center px-6 py-12 sm:px-10 md:px-16 lg:px-24">
-    
-                <h2 class="mb-6 text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">
-                    About Us
-                </h2>
-    
-                <p class="mb-8 max-w-xl text-base leading-relaxed text-gray-600 sm:text-lg">
-                    NRB Residence is a new kind of real estate platform in Dhaka, created to make owning land or an
-                    apartment easier and
-                    more accessible for everyone. We offer plots and beautifully located apartments at prices people can
-                    realistically
-                    afford. Anyone can explore and buy their property through a simple digital process, without long
-                    paperwork or
-                    complicated steps.
-                    <br> <br>
-                    Our residential projects are designed for comfortable living with all the essential digital services
-                    that modern
-                    families expect. With installment plans starting from only BDT 10,000, we make it possible for more
-                    people to begin
-                    their journey toward owning a home. We take legal matters very seriously and ensure every plot is fully
-                    verified and
-                    safe to purchase. Most importantly, we are committed to delivering your property on time.
-    
-                </p>
-    
-    
-            </div>
-    
-            <!-- Right Image -->
-            <div class="w-full">
-                <div class="">
-                    <img src="https://demo.nrbresidence.com/assets/web/images/bg/DR_03.jpg" alt="Abstract workspace"
-                        class="h-full w-full object-cover " />
-                </div>
-            </div>
-    
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white ">Frequently Asked Questions</h1>
+            <p class="text-white mt-2">Everything you need to know about NRB Residence Apartments.</p>
         </div>
     </section>
-
-    <!-- mission vision  -->
-    <section class="bg-slate-50 py-16 px-6 md:py-24">
-        <div class="max-w-6xl mx-auto">
     
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#C5A059] mb-4 uppercase tracking-widest">Purpose
-                </h2>
-                <div class="h-1 w-20 bg-[#C5A059] mx-auto"></div>
+    <div class="bg-gray-100 py-10">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <!-- <h2 class="text-5xl font-extrabold text-denim">Frequently Asked Questions</h2> -->
+                <!-- <p class="text-denim mt-2">Everything you need to know about NRB Residence Apartments.</p> -->
             </div>
     
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-4">
     
-                <div
-                    class="group bg-[#181D24] p-8 md:p-12 rounded-2xl border border-gray-800 hover:border-[#C5A059] transition-all duration-300 shadow-xl">
-                    <div class="flex items-center mb-6">
-                        <div class="p-3 bg-[#C5A059]/10 rounded-lg mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#C5A059]" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-white">Mission</h3>
+                <div class="accordion-item border border-gray-200 rounded-2xl bg-white transition-all duration-300">
+                    <button
+                        class="accordion-header w-full flex items-center justify-between p-6 text-left focus:outline-none">
+                        <span class="text-lg font-bold text-gold">Where is NRB Residence located?</span>
+                        <span
+                            class="icon-rotate bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300">
+                            <i class="fas fa-plus text-xs"></i>
+                        </span>
+                    </button>
+                    <div class="accordion-content px-6 text-denim">
+                        NRB Residence is strategically located just 20 minutes from Rajuk Purbachal and 5 minutes from the
+                        historic Sonargaon tourist town via the Purbachal Express Highway.
                     </div>
-                    <p class="text-gray-200 text-justify leading-relaxed ">
-                        Our mission is to make premium holiday home ownership accessible through transparent and
-                        flexible co-ownership and timeshare solutions. We are comitted to "Crafting Timeless Assets,
-                        Not Just Homes', ensuring your investment aerves as a benchmark for luxury and long-term
-                        value.
-                    </p>
                 </div>
     
-                <div
-                    class="group bg-[#181D24] p-8 md:p-12 rounded-2xl border border-gray-800 hover:border-[#C5A059] transition-all duration-300 shadow-xl">
-                    <div class="flex items-center mb-6">
-                        <div class="p-3 bg-[#C5A059]/10 rounded-lg mr-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#C5A059]" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-white"> Vision</h3>
+                <div class="accordion-item border border-gray-200 rounded-2xl bg-white transition-all duration-300">
+                    <button
+                        class="accordion-header w-full flex items-center justify-between p-6 text-left focus:outline-none">
+                        <span class="text-lg font-bold text-gold">What is the minimum monthly installment?</span>
+                        <span
+                            class="icon-rotate bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300">
+                            <i class="fas fa-plus text-xs"></i>
+                        </span>
+                    </button>
+                    <div class="accordion-content px-6 text-denim">
+                        Our booking plans start with installments as low as <strong>৳10,000 per month</strong>, making it
+                        accessible for everyone to secure their future home.
                     </div>
-                    <p class="text-gray-200 text-justify leading-relaxed">
-                        To become the global benchmark for excellence in our industry. We envision a future where
-                        our strategic insights and creative execution set the standard for quality, integrity, and
-                        lasting impact.
-                    </p>
+                </div>
+    
+                <div class="accordion-item border border-gray-200 rounded-2xl bg-white transition-all duration-300">
+                    <button
+                        class="accordion-header w-full flex items-center justify-between p-6 text-left focus:outline-none">
+                        <span class="text-lg font-bold text-gold">Is the project fully authorized?</span>
+                        <span
+                            class="icon-rotate bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300">
+                            <i class="fas fa-plus text-xs"></i>
+                        </span>
+                    </button>
+                    <div class="accordion-content px-6 text-slate-600">
+                        Yes, we provide full legal transparency. The project is authorized, and all documentation is
+                        available for verification at our corporate office.
+                    </div>
                 </div>
     
             </div>
         </div>
-    </section>
+    </div>
+
+
+    
+
+
 
     <!-- footer section  -->
     <footer class="bg-gray-200 text-black pt-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
+    
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
-
+    
                 <div class="space-y-6">
-
+    
                     <h4 class="text-xl font-bold tracking-tight text-gold">Office Location</h4>
                     <div class="space-y-4 text-sm text-black">
                         <p class="leading-relaxed flex gap-3">
@@ -265,7 +240,7 @@
                         </p>
                     </div>
                 </div>
-
+    
                 <div>
                     <h4 class="text-lg font-bold mb-8 relative text-gold">
                         Navigation
@@ -290,7 +265,7 @@
                                 Us</a></li>
                     </ul>
                 </div>
-
+    
                 <div>
                     <h4 class="text-lg font-bold mb-8 relative text-gold">
                         Our Offices
@@ -314,13 +289,13 @@
                     </div>
                 </div>
             </div>
-
+    
             <div class="border-t border-slate-800 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
                 <p class="text-xs ">
                     2026 &copy; <span class="">NRB Residence</span>. All Rights Reserved | Developed
                     by <a href="#" class="text-sky-500 font-bold hover:underline">Techsolutions</a>
                 </p>
-
+    
                 <div class="flex items-center gap-3">
                     <a href="#"
                         class="w-10 h-10 rounded-full bg-maincolor flex items-center justify-center text-slate-400 bg-gold  transition-all transform hover:-translate-y-1">
@@ -357,11 +332,28 @@
             }
         });
     </script>
-
-    
     <!-- navbar js end -->
 
-    
+    <!-- accordion js  -->
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionItem = button.parentElement;
+
+                // Close other open items (Optional: remove this part if you want multiple open at once)
+                document.querySelectorAll('.accordion-item').forEach(item => {
+                    if (item !== accordionItem) {
+                        item.classList.remove('active');
+                    }
+                });
+
+                // Toggle the clicked item
+                accordionItem.classList.toggle('active');
+            });
+        });
+    </script>
+
+
 </body>
 
 </html>
